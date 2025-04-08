@@ -50,7 +50,7 @@ export default function Home() {
     return (
         <div>
             <nav>
-                <button onClick={logout}>Logout</button>
+                <a onClick={logout} className="logout-link">Logout</a>
             </nav>
             <div>
                 <h2>Create Note</h2>
@@ -71,8 +71,9 @@ export default function Home() {
                         name="content"
                         onChange={(e) => setContent(e.target.value)}
                         required
+                        rows="5"
                     ></textarea>
-                    <button type="submit">Submit</button>
+                    <input type="submit" value="Submit"></input>
                 </form>
             </div>
             <div>

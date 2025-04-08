@@ -12,8 +12,8 @@ export default function Login() {
     return (
         <div>
             <Form route="/api/token/" method="login" />
-            <p>Don't have an account?{" "}
-                <a onClick={handleRegister}>Register here</a>
+            <p className="route-text">Don't have an account?{" "}
+                <a onClick={handleRegister} className="route-link">Register here</a>
             </p>
         </div>
     );

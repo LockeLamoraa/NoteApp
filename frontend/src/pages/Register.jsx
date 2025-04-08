@@ -11,8 +11,8 @@ export default function Register() {
     return (
         <div>
             <Form route="/api/user/register/" method="register" />
-            <p>Already have an account?{" "}
-                <a onClick={handleLogin}>Log In here</a>
+            <p className="route-text">Already have an account?{" "}
+                <a onClick={handleLogin} className="route-link">Log In here</a>
             </p>
         </div>
     );
