@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import api from "../api";
 import Note from "../components/Note";
 import '../styles/home.css';
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
     const [notes, setNotes] = useState([]);
     const [content, setContent] = useState("");
     const [title, setTitle] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
         getNotes();
@@ -40,8 +42,16 @@ export default function Home() {
         .catch(err => console.log(err));
     }
 
+    function logout() {
+        localStorage.clear();
+        navigate("/login");
+    }
+
     return (
         <div>
+            <nav>
+                <button onClick={logout}>Logout</button>
+            </nav>
             <div>
                 <h2>Create Note</h2>
                 <form onSubmit={createNote}>
